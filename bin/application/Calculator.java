@@ -68,6 +68,17 @@ public class Calculator {
 	
 		return u/i;
 	}
+	
+	public double pAusRundI (double i, double r) {
+		System.out.println("(i*i)*r");
+		return (i*i)*r;
+	}
+	
+	public double UAusRundI (double r, double i) {
+		System.out.println("r*i");
+		return r*i;
+	}
+	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
 	
