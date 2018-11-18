@@ -90,17 +90,15 @@ public class Calculator {
 		return Math.sqrt(p/r);
 	}
 	
-	public double iAusPundU (double p, double u) {
-		System.out.println("p/u");
-		return p/u;
+	public double iAusCundD (double c, double d) {
+		System.out.println("c/d");
+		return c/d;
 	}
 	
-	public double rAusPundU (double p, double u) {
-		System.out.println("(u*u)/p");
-		return (u*u)/p;
+	public double rAusCundD (double c, double d) {
+		System.out.println("(d*d)/c");
+		return (d*d)/c;
 	}
 	
-	/* Hier die Methoden mit den Formlen hinzufügen
-	 */
 	
 }
