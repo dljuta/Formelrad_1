@@ -89,15 +89,15 @@ public class Calculator {
 		System.out.println("Math.sqrt(p/r)");
 		return Math.sqrt(p/r);
 	}
-	
-	public double iAusCundD (double c, double d) {
-		System.out.println("c/d");
-		return c/d;
+
+	public double iAusAundB (double a, double b) {
+		System.out.println("a/b");
+		return a/b;
 	}
 	
-	public double rAusCundD (double c, double d) {
-		System.out.println("(d*d)/c");
-		return (d*d)/c;
+	public double rAusAundB (double a, double b) {
+		System.out.println("(b*b)/a");
+		return (b*b)/a;
 	}
 	
 	
