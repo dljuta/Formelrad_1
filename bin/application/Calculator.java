@@ -90,6 +90,16 @@ public class Calculator {
 		return Math.sqrt(p/r);
 	}
 	
+	public double iAusPundU (double p, double u) {
+		System.out.println("p/u");
+		return p/u;
+	}
+	
+	public double rAusPundU (double p, double u) {
+		System.out.println("(u*u)/p");
+		return (u*u)/p;
+	}
+	
 	/* Hier die Methoden mit den Formlen hinzufügen
 	 */
 	
