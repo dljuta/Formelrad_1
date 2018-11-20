@@ -99,6 +99,6 @@ public class Calculator {
 		System.out.println("(b*b)/a");
 		return (b*b)/a;
 	}
-	
+
 	
 }
