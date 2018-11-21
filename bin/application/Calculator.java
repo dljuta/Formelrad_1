@@ -98,4 +98,14 @@ public class Calculator {
 		return (u * u) / p;
 	}
 
+	public double rAusPundI(double p, double i) {
+		System.out.println("p/(i*i)");
+		return p / (i * i);
+	}
+
+	public double UAusPundI(double p, double i) {
+		System.out.println("p/i");
+		return p / i;
+	}
+
 }
