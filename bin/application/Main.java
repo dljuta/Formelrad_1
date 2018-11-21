@@ -116,6 +116,15 @@ public class Main extends Application {
 				} else {
 					this.counter++;
 				}
+				if (this.counter > 2) {
+					System.err.println("Mehr als zwei Zahlen angegeben bitte genau nur 2 Zahlen angeben !");
+					this.counter = 0;
+					txLeistung.setStyle("-fx-text-fill: black;");
+					txSpannung.setStyle("-fx-text-fill: black;");
+					txWiderstand.setStyle("-fx-text-fill: black;");
+					txStrom.setStyle("-fx-text-fill: black;");
+					return;
+				}
 
 				Calculator myCalculator = new Calculator(Double.parseDouble(txLeistung.getText()),
 						Double.parseDouble(txSpannung.getText()), Double.parseDouble(txStrom.getText()),
