@@ -49,23 +49,23 @@ public class Calculator {
 	}
 	
 	public double pAusUundR (double u, double r) {
-		
+		System.out.println("(u*u)/r");
 		return (u*u)/r;
 	}
 	
 	public double iAusUundR (double u, double r) {
-		
+		System.out.println("u/r");
 		return u/r;
 	
 	}
 	
 	public double pAusUundI (double u, double i) {
-		
+		System.out.println("u*i");
 		return u*i;
 	}
 
 	public double rAusUundI (double u, double i) {
-	
+		System.out.println("u/i");
 		return u/i;
 	}
 	
@@ -90,14 +90,14 @@ public class Calculator {
 		return Math.sqrt(p/r);
 	}
 
-	public double iAusAundB (double a, double b) {
-		System.out.println("a/b");
-		return a/b;
+	public double iAusAundB (double p, double u) {
+		System.out.println("p/u");
+		return p/u;
 	}
 	
-	public double rAusAundB (double a, double b) {
-		System.out.println("(b*b)/a");
-		return (b*b)/a;
+	public double rAusAundB (double p, double u) {
+		System.out.println("(u*u)/p");
+		return (u*u)/p;
 	}
 
 	
