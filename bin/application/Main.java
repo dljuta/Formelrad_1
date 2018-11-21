@@ -94,27 +94,40 @@ public class Main extends Application {
 
 				if (txLeistung.getText().trim().isEmpty()) {
 					txLeistung.setText("NaN");
+					txLeistung.setStyle("-fx-text-fill: red;");
 				} else {
 					this.counter++;
 				}
 
 				if (txStrom.getText().trim().isEmpty()) {
 					txStrom.setText("NaN");
+					txStrom.setStyle("-fx-text-fill: red;");
 				} else {
 					this.counter++;
 				}
 
 				if (txWiderstand.getText().trim().isEmpty()) {
 					txWiderstand.setText("NaN");
+					txWiderstand.setStyle("-fx-text-fill: red;");
 				} else {
 					this.counter++;
 				}
 
 				if (txSpannung.getText().trim().isEmpty()) {
 					txSpannung.setText("NaN");
+					txSpannung.setStyle("-fx-text-fill: red;");
 
 				} else {
 					this.counter++;
+				}
+				if (this.counter > 2) {
+					System.err.println("Mehr als zwei Zahlen angegeben bitte genau nur 2 Zahlen angeben !");
+					this.counter = 0;
+					txLeistung.setStyle("-fx-text-fill: black;");
+					txSpannung.setStyle("-fx-text-fill: black;");
+					txWiderstand.setStyle("-fx-text-fill: black;");
+					txStrom.setStyle("-fx-text-fill: black;");
+					return;
 				}
 
 				Calculator myCalculator = new Calculator(Double.parseDouble(txLeistung.getText()),
