@@ -2,6 +2,8 @@ package application;
 
 import java.io.FileInputStream;
 
+import com.sun.prism.paint.Color;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -15,12 +17,16 @@ import javafx.scene.text.Font;
 
 /**
  * Formelrad Application
- * @author Dorian Ljuta/Michel Elias
+ * 
+ * @author Michel Elias/Dorian Ljuta
  * @version 13.09.2018
  */
 public class Main extends Application {
+	private int counter = 0;
+
 	@Override
 	public void start(Stage primaryStage) {
+
 		try {
 			Pane root = new Pane();
 
@@ -78,23 +84,53 @@ public class Main extends Application {
 			btnBerechnen.relocate(100, 445);
 			btnBerechnen.setText("Berechnen");
 			root.getChildren().add(btnBerechnen);
-			
+
 			btnBerechnen.setOnAction(e -> {
-				Calculator myCalculator = new Calculator(
-						Double.parseDouble(txLeistung.getText()),
-						Double.parseDouble(txSpannung.getText()),
-						Double.parseDouble(txStrom.getText()),
+
+				txLeistung.setStyle("-fx-text-fill: black;");
+				txSpannung.setStyle("-fx-text-fill: black;");
+				txWiderstand.setStyle("-fx-text-fill: black;");
+				txStrom.setStyle("-fx-text-fill: black;");
+
+				if (txLeistung.getText().trim().isEmpty()) {
+					txLeistung.setText("NaN");
+				} else {
+					this.counter++;
+				}
+
+				if (txStrom.getText().trim().isEmpty()) {
+					txStrom.setText("NaN");
+				} else {
+					this.counter++;
+				}
+
+				if (txWiderstand.getText().trim().isEmpty()) {
+					txWiderstand.setText("NaN");
+				} else {
+					this.counter++;
+				}
+
+				if (txSpannung.getText().trim().isEmpty()) {
+					txSpannung.setText("NaN");
+
+				} else {
+					this.counter++;
+				}
+
+				Calculator myCalculator = new Calculator(Double.parseDouble(txLeistung.getText()),
+						Double.parseDouble(txSpannung.getText()), Double.parseDouble(txStrom.getText()),
 						Double.parseDouble(txWiderstand.getText()));
 				System.out.print("Vorher:  ");
 				System.out.println(myCalculator.toString());
 				myCalculator.calculate();
 				System.out.print("Nachher: ");
 				System.out.println(myCalculator.toString());
-					
+
 				txLeistung.setText(Double.toString(myCalculator.getLeistung()));
 				txSpannung.setText(Double.toString(myCalculator.getSpannung()));
 				txStrom.setText(Double.toString(myCalculator.getStrom()));
 				txWiderstand.setText(Double.toString(myCalculator.getWiderstand()));
+				this.counter = 0;
 			});
 
 			Scene scene = new Scene(root, 330, 490);
