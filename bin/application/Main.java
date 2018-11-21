@@ -94,24 +94,28 @@ public class Main extends Application {
 
 				if (txLeistung.getText().trim().isEmpty()) {
 					txLeistung.setText("NaN");
+					txLeistung.setStyle("-fx-text-fill: red;");
 				} else {
 					this.counter++;
 				}
 
 				if (txStrom.getText().trim().isEmpty()) {
 					txStrom.setText("NaN");
+					txStrom.setStyle("-fx-text-fill: red;");
 				} else {
 					this.counter++;
 				}
 
 				if (txWiderstand.getText().trim().isEmpty()) {
 					txWiderstand.setText("NaN");
+					txWiderstand.setStyle("-fx-text-fill: red;");
 				} else {
 					this.counter++;
 				}
 
 				if (txSpannung.getText().trim().isEmpty()) {
 					txSpannung.setText("NaN");
+					txSpannung.setStyle("-fx-text-fill: red;");
 
 				} else {
 					this.counter++;
