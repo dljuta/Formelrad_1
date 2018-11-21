@@ -43,8 +43,31 @@ public class Calculator {
 	}
 
 	public void calculate() {
-		this.leistung = pAusUundR(this.spannung, this.widerstand);
-		this.strom = iAusUundR(this.spannung, this.widerstand);
+		if(Double.isNaN(this.leistung) && Double.isNaN(this.strom)) {
+			this.leistung = pAusUundR(this.spannung, this.widerstand);
+			this.strom = iAusUundR(this.spannung, this.widerstand);
+		}
+		if (Double.isNaN(this.leistung) && Double.isNaN(this.spannung)) {
+			this.leistung = pAusRundI(this.strom, this.widerstand);
+			this.spannung = UAusRundI(this.strom, this.widerstand);
+		}
+		if(Double.isNaN(this.leistung) && Double.isNaN(this.widerstand)) {
+			this.leistung = pAusUundI(this.spannung, this.strom);
+			this.widerstand = rAusUundI(this.spannung, this.strom);
+		}
+		if(Double.isNaN(this.spannung) && Double.isNaN(this.strom)) {
+			this.spannung = UAusRundP(this.widerstand, this.leistung);
+			this.strom = UAusRundP(this.widerstand, this.leistung);
+		}
+		if(Double.isNaN(this.spannung) && Double.isNaN(this.widerstand)){
+			this.spannung = UAusPundI(this.leistung, this.strom);
+			this.widerstand = rAusPundI(this.leistung, this.strom);
+		}
+		if(Double.isNaN(this.strom) && Double.isNaN(this.widerstand)) {
+			this.strom = iAusPundU(this.leistung, this.spannung);
+			this.widerstand = rAusPundU(this.leistung, this.spannung);
+		}
+		
 	}
 
 	public double pAusUundR(double u, double r) {
